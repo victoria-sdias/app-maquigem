@@ -35,7 +35,8 @@ def cadastrar_nova_maquiagem():
 
     nome_do_item_de_maquiagem = input('Digite o nome do item maquiagem que deseja cadastrar: ')
     categoria = input(f'Digite o nome da categoria do item de maquiagem {nome_do_item_de_maquiagem}: ')
-    dados_da_maquiagem = {'nome':nome_do_item_de_maquiagem, 'categoria':categoria }
+    cor_maquiagem = input(f'Digite a cor do item de maquiagem {nome_do_item_de_maquiagem}: ')
+    dados_da_maquiagem = {'nome': nome_do_item_de_maquiagem, 'categoria': categoria, 'cor': cor_maquiagem}
     maquiagens.append(dados_da_maquiagem)
     print(f'O item de maquiagem {nome_do_item_de_maquiagem} foi cadastrado com sucesso!')
     
@@ -66,8 +67,8 @@ def escolher_opcao():
             finalizar_app()
         else: 
             opcao_invalida()
-    except:
-        opcao_invalida()
+    except Exception as error:
+        print(f'Erro: {error}')
 
 
 def main():
